@@ -27,6 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+# CSRF設定（ngrok対応）
+CSRF_TRUSTED_ORIGINS = [
+    "https://23f97e23d94c.ngrok-free.app",
+    "https://*.ngrok-free.app",
+    "https://*.ngrok.io",
+]
+
+# ngrokの警告ページをスキップするための設定
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
 
 # Application definition
 
@@ -37,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taskmanager',
 ]
 
 MIDDLEWARE = [
@@ -103,9 +114,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tokyo'
 
 USE_I18N = True
 
